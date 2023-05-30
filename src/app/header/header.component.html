@@ -1,1 +1,14 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-md navbar-light bg-light mb-3">
+  <div class="container-fluid px-4">
+    <a class="navbar-brand">BookStore</a>
+    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto me-auto">
+        <li class="nav-item active"><a class="nav-link" (click)="isMenuCollapsed = true">Available books</a></li>
+        <li class="nav-item active"><a class="nav-link" (click)="isMenuCollapsed = true">My reserved books</a></li>
+        <li class="nav-item active"><a class="nav-link" (click)="isMenuCollapsed = true">Logout</a></li>
+      </ul>
+      <app-search-bar></app-search-bar>
+    </div>
+  </div>
+</nav>
