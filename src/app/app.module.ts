@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchBarComponent } from './header/search-bar/search-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AvailableBooksComponent } from './available-books/available-books.component';
+import { MyBoughtBooksComponent } from './my-bought-books/my-bought-books.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { AvailableBooksComponent } from './available-books/available-books.compo
     SearchBarComponent,
     FooterComponent,
     AvailableBooksComponent,
+    MyBoughtBooksComponent,
   ],
   imports: [
     BrowserModule,
