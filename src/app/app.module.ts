@@ -8,6 +8,7 @@ import { SearchBarComponent } from './header/search-bar/search-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AvailableBooksComponent } from './available-books/available-books.component';
 import { MyBoughtBooksComponent } from './my-bought-books/my-bought-books.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,11 @@ import { MyBoughtBooksComponent } from './my-bought-books/my-bought-books.compon
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot([
+      { path: 'availablebooks', component: AvailableBooksComponent },
+      { path: 'boughtbooks', component: MyBoughtBooksComponent }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
