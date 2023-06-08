@@ -9,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AvailableBooksComponent } from './available-books/available-books.component';
 import { MyBoughtBooksComponent } from './my-bought-books/my-bought-books.component';
 import { RouterModule } from '@angular/router';
+import { BookListItemComponent } from './books/book-list-item/book-list-item.component';
+import { BookMenuItemsComponent } from './books/book-menu-items/book-menu-items.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { RouterModule } from '@angular/router';
     FooterComponent,
     AvailableBooksComponent,
     MyBoughtBooksComponent,
+    BookListItemComponent,
+    BookMenuItemsComponent,
   ],
   imports: [
     BrowserModule,
