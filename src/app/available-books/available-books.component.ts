@@ -16,4 +16,11 @@ export class AvailableBooksComponent {
     { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
     { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
   ]
+
+  bookCategories = [
+    { id: 1, name: 'Przygodowe' },
+    { id: 1, name: 'Kryminalne' },
+    { id: 1, name: 'Thrillery' },
+    { id: 1, name: 'Test' },
+  ]
 }

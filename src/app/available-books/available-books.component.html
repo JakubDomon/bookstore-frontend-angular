@@ -1,7 +1,15 @@
 <div role="main" class="row h-100 gx-5">
-  <div class="col-md-3 border shadow-sm bg-light container">
-    <div class="col-md-12">
-      <p>asdas</p>
+  <div class="col-md-3 rounded p-0">
+    <div class="col-md-12 p-0">
+      <!-- MENU LIST -->
+      <div class="w-100 rounded mb-md-3">
+        <h5>Book categories</h5>
+      </div>
+      <div class="list-group w-100">
+        <a href="#" class="list-group-item list-group-item-action">All books</a>
+        <a href="#" *ngFor="let categories of bookCategories" class="list-group-item list-group-item-action">ABCD</a>
+      </div>
+      <!-- MENU LIST -->
     </div>
   </div>
   <div class="col-md-9">

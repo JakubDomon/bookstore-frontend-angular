@@ -28,7 +28,8 @@ import { BookMenuItemsComponent } from './books/book-menu-items/book-menu-items.
     NgbModule,
     RouterModule.forRoot([
       { path: 'availablebooks', component: AvailableBooksComponent },
-      { path: 'boughtbooks', component: MyBoughtBooksComponent }
+      { path: 'boughtbooks', component: MyBoughtBooksComponent },
+      // Book categories routes
     ])
   ],
   providers: [],
