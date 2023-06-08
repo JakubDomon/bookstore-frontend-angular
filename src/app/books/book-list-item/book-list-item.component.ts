@@ -6,8 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./book-list-item.component.css']
 })
 export class BookListItemComponent {
-  @Input() bookTitle: string = '';
-  @Input() bookDesc: string = '';
-  @Input() bookShortDesc: string = '';
-  @Input() bookImageSrc: string = '';
+  @Input() book : any
 }

@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AvailableBooksService } from '../available-books.service';
 
 @Component({
   selector: 'app-available-books',
   templateUrl: './available-books.component.html',
   styleUrls: ['./available-books.component.css']
 })
-export class AvailableBooksComponent {
-  availableBooks = [
-    { id: 1, title: 'W pustyni i w puszczy', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni',  image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-    { id: 2, title: 'Stary człowiek i morze', description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque labore sunt incidunt exercitationem praesentium nesciunt quam harum repellendus ad ipsa tenetur optio, pariatur amet error tempore eum vero, reprehenderit sed!', shortDescription: 'W pustyni', image: 'assets/images/books/img.jpg' },
-  ]
+export class AvailableBooksComponent implements OnInit{
+  availableBooks: any[] = [];
+
+  constructor(private availableBooksService: AvailableBooksService){}
+
+  ngOnInit(): void {
+      this.availableBooksService
+      .getAvailableBooks()
+      .subscribe({
+        next: books => this.availableBooks = books
+      })
+  }
 
   bookCategories = [
     { id: 1, name: 'Przygodowe' },
@@ -23,4 +25,6 @@ export class AvailableBooksComponent {
     { id: 1, name: 'Thrillery' },
     { id: 1, name: 'Test' },
   ]
+
+
 }
