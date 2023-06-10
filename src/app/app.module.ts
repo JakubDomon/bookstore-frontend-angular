@@ -35,6 +35,7 @@ import { BookDetailComponent } from './books/book-detail/book-detail.component';
     RouterModule.forRoot([
       { path: 'availablebooks', component: AvailableBooksComponent },
       { path: 'boughtbooks', component: MyBoughtBooksComponent },
+      { path: 'bookdetails/:id', component: BookDetailComponent},
     ])
   ],
   providers: [],
