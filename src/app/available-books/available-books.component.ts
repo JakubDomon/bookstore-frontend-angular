@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AvailableBooksService } from '../available-books.service';
 import { BookCategoriesService } from '../book-categories.service';
 
@@ -10,6 +10,9 @@ import { BookCategoriesService } from '../book-categories.service';
 export class AvailableBooksComponent implements OnInit{
   availableBooks: any[] = [];
   bookCategories: any[] = [];
+
+  // Filters
+  categoryFilter: string = '';
 
   constructor(private availableBooksService: AvailableBooksService, private bookCategoriesService: BookCategoriesService){}
 
@@ -26,5 +29,9 @@ export class AvailableBooksComponent implements OnInit{
       .subscribe({
         next: categories => this.bookCategories = categories
       })
+  }
+
+  assignCategory(category: string){
+    this.categoryFilter = category;
   }
 }

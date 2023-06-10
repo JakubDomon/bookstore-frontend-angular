@@ -11,6 +11,7 @@ import { MyBoughtBooksComponent } from './my-bought-books/my-bought-books.compon
 import { RouterModule } from '@angular/router';
 import { BookListItemComponent } from './books/book-list-item/book-list-item.component';
 import { BookCategoriesComponent } from './books/book-categories/book-categories.component';
+import { BookCategoryFilterPipe } from './pipes/book-category-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BookCategoriesComponent } from './books/book-categories/book-categories
     MyBoughtBooksComponent,
     BookListItemComponent,
     BookCategoriesComponent,
+    BookCategoryFilterPipe,
   ],
   imports: [
     BrowserModule,
