@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AvailableBooksService } from '../available-books.service';
 import { BookCategoriesService } from '../book-categories.service';
+import { fadeIn } from '../animations/fadeIn';
+import { fadeOut } from '../animations/fadeOut';
 
 @Component({
   selector: 'app-available-books',
   templateUrl: './available-books.component.html',
-  styleUrls: ['./available-books.component.css']
+  styleUrls: ['./available-books.component.css'],
+  animations: [fadeIn, fadeOut],
 })
 export class AvailableBooksComponent implements OnInit{
   availableBooks: any[] = [];

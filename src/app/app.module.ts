@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -27,11 +28,11 @@ import { BookCategoryFilterPipe } from './pipes/book-category-filter.pipe';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NgbModule,
     RouterModule.forRoot([
       { path: 'availablebooks', component: AvailableBooksComponent },
       { path: 'boughtbooks', component: MyBoughtBooksComponent },
-      // Book categories routes
     ])
   ],
   providers: [],
