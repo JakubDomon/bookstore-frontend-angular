@@ -1,1 +1,18 @@
-<p>Available books!</p>
+<div role="main" class="row h-100 gx-5" @fadeIn>
+  <div class="col-md-3 rounded p-0">
+    <div class="col-md-12 p-0">
+      <!-- MENU LIST -->
+        <app-book-categories [bookCategories]="bookCategories" (emitCategory)="assignCategory($event)"></app-book-categories>
+      <!-- MENU LIST -->
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="col-md-12 rounded-3 ">
+      <div class="row">
+        <div class="col-md-3 col-sm-4 my-2" *ngFor="let book of availableBooks | bookCategoryFilter: categoryFilter">
+          <app-book-list-item [book]="book" @fadeIn></app-book-list-item>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

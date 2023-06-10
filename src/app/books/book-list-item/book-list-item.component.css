@@ -1,0 +1,21 @@
+@media (min-width: 1200px){
+  .responsive-desc-text{
+    font-size: 1vw;
+  }
+  .responsive-title-text{
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 1199px){
+  .responsive-desc-text{
+    font-size: 1.5vw;
+  }
+  .responsive-title-text{
+    font-size: 2vw;
+  }
+}
+
+.text-justify{
+  text-align: justify;
+}

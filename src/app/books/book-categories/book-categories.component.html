@@ -1,0 +1,7 @@
+<div class="w-100 rounded mb-md-3">
+  <h5>Book categories</h5>
+</div>
+<div class="list-group w-100">
+  <a class="list-group-item list-group-item-action" (click)="emitCategory('all')">All books</a>
+  <a href="#" onclick="return false" *ngFor="let categories of bookCategories" (click)="emitCategory(categories.name.toLowerCase())" class="list-group-item list-group-item-action">{{ categories.name}}</a>
+</div>
