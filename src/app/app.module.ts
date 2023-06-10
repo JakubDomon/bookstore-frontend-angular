@@ -10,7 +10,7 @@ import { AvailableBooksComponent } from './available-books/available-books.compo
 import { MyBoughtBooksComponent } from './my-bought-books/my-bought-books.component';
 import { RouterModule } from '@angular/router';
 import { BookListItemComponent } from './books/book-list-item/book-list-item.component';
-import { BookMenuItemsComponent } from './books/book-menu-items/book-menu-items.component';
+import { BookCategoriesComponent } from './books/book-categories/book-categories.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { BookMenuItemsComponent } from './books/book-menu-items/book-menu-items.
     AvailableBooksComponent,
     MyBoughtBooksComponent,
     BookListItemComponent,
-    BookMenuItemsComponent,
+    BookCategoriesComponent,
   ],
   imports: [
     BrowserModule,
