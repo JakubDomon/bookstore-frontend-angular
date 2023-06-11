@@ -19,3 +19,13 @@
 .text-justify{
   text-align: justify;
 }
+
+.hover{
+  transition: 200ms;
+}
+.hover:hover{
+  -webkit-box-shadow: 8px 8px 24px -17px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px -17px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px -17px rgba(66, 68, 90, 1);
+}
+
