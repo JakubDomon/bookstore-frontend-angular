@@ -15,6 +15,8 @@ import { BookCategoriesComponent } from './books/book-categories/book-categories
 import { BookCategoryFilterPipe } from './pipes/book-category-filter.pipe';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { BookOpinionsComponent } from './books/book-detail/book-opinions/book-opinions.component';
+import { BookListComponent } from './my-bought-books/book-list/book-list.component';
+import { SummaryComponent } from './my-bought-books/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { BookOpinionsComponent } from './books/book-detail/book-opinions/book-op
     BookCategoryFilterPipe,
     BookDetailComponent,
     BookOpinionsComponent,
+    BookListComponent,
+    SummaryComponent,
   ],
   imports: [
     BrowserModule,
