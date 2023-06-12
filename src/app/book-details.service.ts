@@ -7,7 +7,7 @@ import { of } from 'rxjs';
 export class BookDetailsService {
   getBookDetails(bookID: number){
     return of(
-      { id: 1, title: 'Title1', description: 'desc1', author: 'marian paździoch' }
+      { id: 1, title: 'Title1', description: 'desc1', author: 'marian paździoch', image: 'assets/images/books/img.jpg', opinion: 6 }
     )
   }
 }
