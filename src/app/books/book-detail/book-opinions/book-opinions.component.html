@@ -1,1 +1,16 @@
-<p>book-opinions works!</p>
+<div class="row m-0 h-100">
+  <div class="row border-bottom pb-2 my-2" *ngFor="let opinion of bookOpinions">
+    <div class="col-2">
+      <img [src]="opinion.authorImage" width="50px" alt="opinion.author" class="rounded-pill">
+    </div>
+    <div class="col-3">
+      <p>{{ opinion.title }}</p>
+    </div>
+    <div class="col-5 text-wrap">
+      <p>{{ opinion.text }}</p>
+    </div>
+    <div class="col-2">
+      <p>{{ opinion.rating }}/10</p>
+    </div>
+  </div>
+</div>

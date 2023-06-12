@@ -5,9 +5,10 @@
         <img [src]="book.image" class="border border-2 rounded-4 shadow" alt="" width="100%" height="100%">
       </div>
       <div class="w-100 h-auto p-4 d-flex justify-content-start align-items-center flex-column mobile-fit-title">
-        <div class="w-75"><ngb-progressbar type="success" [value]="book.opinion" [max]="10" [striped]="true" [animated]="true"></ngb-progressbar></div>
-        <div class="w-75 d-flex justify-content-between align-items-center mt-2">
-          <p>Ocena:</p>
+
+        <div class="w-75 d-flex justify-content-center align-items-center"><ngb-rating [(rate)]="book.opinion" [max]="10" [readonly]="true"></ngb-rating></div>
+        <div class="w-50 d-flex justify-content-between align-items-center mt-2">
+          <p>Rating:</p>
           <p>{{ book.opinion }}/10</p>
         </div>
       </div>
@@ -17,11 +18,18 @@
         <div class="col-md-6">
           <h1 class="text-uppercase">{{ book.title }}</h1>
           <h5 class="text-uppercase text-muted">{{ book.author }}</h5>
+          <hr>
           <p class="mt-md-4">{{ book.description }}</p>
         </div>
         <div class="col-md-6">
-          <div class="row h-100 bg-dark">
-            <div class="">
+          <div class="row h-100 d-flex flex-column">
+            <div class="w-100 h-50 px-2 d-flex flex-column">
+              <h5>Readers' opinions</h5>
+              <div class="flex-grow-1 py-1 mb-2 overflow-auto">
+                <app-book-opinions class="w-100"></app-book-opinions>
+              </div>
+            </div>
+            <div class="w-100 h-50">
 
             </div>
           </div>
