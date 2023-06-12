@@ -1,20 +1,19 @@
-<div class="row m-0 p-0 h-100">
-  <div class="col-md-3 h-100">
-    <div class="container h-100">
-      <div class="row h-75 border border-2 rounded-4">
-        <img [src]="book.image" alt="" width="100%" height="100%">
+<div class="h-100">
+  <div class="row h-100 m-0 p-3">
+    <div class="col-md-3 p-3">
+      <div class="w-100 h-75 border border-2 rounded-4 shadow">
+
       </div>
-      <div class="row h-lg-25">
-        asdasd
+      <div class="w-100 h-25 p-4 d-flex justify-content-start align-items-center flex-column">
+        <div class="w-75"><ngb-progressbar type="success" [value]="7" [max]="10" [striped]="true" [animated]="true"></ngb-progressbar></div>
+        <div class="w-75 d-flex justify-content-between align-items-center mt-2">
+          <p>Ocena:</p>
+          <p>10/10</p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-9">
-    <div class="container">
-      <div class="row">
-        <h4><b>{{ book.title }}</b></h4>
-        <h6 class="text-muted">{{ book.author }}</h6>
-      </div>
+    <div class="col-md-9 p-3">
+
     </div>
   </div>
 </div>
