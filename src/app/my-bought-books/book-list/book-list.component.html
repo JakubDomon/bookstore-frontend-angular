@@ -1,1 +1,30 @@
-<p>book-list works!</p>
+<div class="w-100 h-100">
+  <div *ngIf="books.length || books === null; else noBooks" class="w-100 h-100 d-flex justify-content-start align-items-center flex-column">
+    <h5>Reserved books</h5>
+    <div class="container">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book in books; let i = index">
+              <td>{{ i+1 }}</td>
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.description }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <ng-template #noBooks>
+    <app-not-found [message]="'Add some books!'"></app-not-found>
+  </ng-template>
+</div>
