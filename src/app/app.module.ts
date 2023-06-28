@@ -17,6 +17,8 @@ import { BookDetailComponent } from './books/book-detail/book-detail.component';
 import { BookOpinionsComponent } from './books/book-detail/book-opinions/book-opinions.component';
 import { BookListComponent } from './my-bought-books/book-list/book-list.component';
 import { SummaryComponent } from './my-bought-books/summary/summary.component';
+import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { SummaryComponent } from './my-bought-books/summary/summary.component';
     BookOpinionsComponent,
     BookListComponent,
     SummaryComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { SummaryComponent } from './my-bought-books/summary/summary.component';
       { path: 'availablebooks', component: AvailableBooksComponent },
       { path: 'boughtbooks', component: MyBoughtBooksComponent },
       { path: 'bookdetails/:id', component: BookDetailComponent},
-    ])
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
