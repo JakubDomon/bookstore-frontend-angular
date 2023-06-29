@@ -19,6 +19,7 @@ export class AuthorizationService {
     this.httpClient.post(`${environment.apiUrl}authentication/authenticate`, { login: login, password: password })
       .subscribe({
         next: response => {
+          localStorage.setItem('currentUser', JSON.stringify(response))
           const modalRef = this.modalService.open(ModalComponent)
           modalRef.componentInstance.message = 'Successfully logged in!'
           this.logged = true;
@@ -47,8 +48,14 @@ export class AuthorizationService {
 
   logout(){
     this.logged = false;
+    localStorage.removeItem('currentUser');
     this.router.navigate(['/available-books']);
   }
 
-  constructor(private router: Router, private httpClient: HttpClient, private modalService: NgbModal){}
+  constructor(private router: Router, private httpClient: HttpClient, private modalService: NgbModal){
+    const user = localStorage.getItem('currentUser');
+    if(user){
+      this.logged = true;
+    }
+  }
 }
