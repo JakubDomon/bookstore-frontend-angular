@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -18,7 +19,11 @@ import { BookOpinionsComponent } from './books/book-detail/book-opinions/book-op
 import { BookListComponent } from './my-bought-books/book-list/book-list.component';
 import { SummaryComponent } from './my-bought-books/summary/summary.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginFormComponent } from './login-page/login-form/login-form.component';
+import { RegisterFormComponent } from './login-page/register-form/register-form.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -36,19 +41,26 @@ import { HttpClientModule } from '@angular/common/http'
     BookListComponent,
     SummaryComponent,
     NotFoundComponent,
+    LoginPageComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     NgbModule,
     RouterModule.forRoot([
       { path: 'availablebooks', component: AvailableBooksComponent },
       { path: 'boughtbooks', component: MyBoughtBooksComponent },
       { path: 'bookdetails/:id', component: BookDetailComponent},
+      { path: 'login', component: LoginPageComponent },
+      { path: 'home' , redirectTo: 'availablebooks'}
     ]),
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

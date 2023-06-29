@@ -1,0 +1,26 @@
+<form #form="ngForm">
+  <div class="mb-4 w-100 d-flex justify-content-center align-items-center">
+    <h5 class="display-6">REGISTER</h5>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Login</label>
+    <input type="number" name="login" class="form-control" aria-describedby="loginHelpId" placeholder="1234567" [(ngModel)]="login">
+    <small id="loginHelpId" class="form-text text-muted">Provide your login</small>
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">First Name</label>
+    <input type="text" name="fname" class="form-control" placeholder="Your first name" [(ngModel)]="fName">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Last Name</label>
+    <input type="text" name="lname" class="form-control" placeholder="Your last name" [(ngModel)]="lName">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Password</label>
+    <input type="password" name="pwd" class="form-control" placeholder="Your top secret password" [(ngModel)]="password">
+  </div>
+  <div class="mt-4 d-flex justify-content-between">
+    <button class="btn text-muted" (click)="form.reset()">Clear data</button>
+    <button class="btn btn-light" (click)="register()">Register</button>
+  </div>
+</form>

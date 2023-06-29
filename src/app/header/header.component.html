@@ -8,7 +8,7 @@
         <li class="nav-item active"><a href="#" [routerLink]="['/boughtbooks']"class="nav-link" (click)="isMenuCollapsed = true">My reserved books</a></li>
         <li class="nav-item active">
           <a href="#" class="nav-link d-inline-block" (click)="isMenuCollapsed = true">Logout</a>
-          <a href="#" class="nav-link d-inline-block" (click)="isMenuCollapsed = true">Login</a>
+          <a href="#" class="nav-link d-inline-block" [routerLink]="['/login']" (click)="isMenuCollapsed = true">Login</a>
         </li>
       </ul>
       <app-search-bar></app-search-bar>
