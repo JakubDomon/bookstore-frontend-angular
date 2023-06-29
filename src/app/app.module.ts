@@ -24,6 +24,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-page/login-form/login-form.component';
 import { RegisterFormComponent } from './login-page/register-form/register-form.component';
 import { ModalComponent } from './modal/modal.component';
+import { AuthorizationService } from './authorization.service';
 
 @NgModule({
   declarations: [
@@ -63,4 +64,6 @@ import { ModalComponent } from './modal/modal.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+
+}
