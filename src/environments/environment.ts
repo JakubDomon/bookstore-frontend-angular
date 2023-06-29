@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: 'https://bookstore69554.azurewebsites.net/'
+  apiUrl: 'https://localhost:44317/api/'
 };
