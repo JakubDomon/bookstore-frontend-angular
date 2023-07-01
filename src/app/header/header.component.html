@@ -6,12 +6,14 @@
       <ul class="navbar-nav mr-auto me-auto">
         <li class="nav-item active"><a href="#" [routerLink]="['/availablebooks']" class="nav-link" (click)="isMenuCollapsed = true">Available books</a></li>
         <li class="nav-item active" *ngIf="isLoggedIn"><a href="#" [routerLink]="['/boughtbooks']"class="nav-link" (click)="isMenuCollapsed = true">My reserved books</a></li>
+        <li class="nav-item active" *ngIf="isLoggedIn"><a href="#" [routerLink]="['/createBook']"class="nav-link" (click)="isMenuCollapsed = true">Add book</a></li>
+        <li class="nav-item active" *ngIf="isLoggedIn"><a href="#" [routerLink]="['/createCategory']"class="nav-link" (click)="isMenuCollapsed = true">Add category</a></li>
         <li class="nav-item active">
           <a href="#" class="nav-link d-inline-block" *ngIf="isLoggedIn" (click)="isMenuCollapsed = true; onLogoutClicked()">Logout</a>
           <a href="#" class="nav-link d-inline-block" *ngIf="!isLoggedIn" [routerLink]="['/login']" (click)="isMenuCollapsed = true">Login</a>
         </li>
       </ul>
-      <app-search-bar></app-search-bar>
+      <!-- <app-search-bar></app-search-bar> -->
     </div>
   </div>
 </nav>

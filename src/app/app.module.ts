@@ -19,12 +19,16 @@ import { BookOpinionsComponent } from './books/book-detail/book-opinions/book-op
 import { BookListComponent } from './my-bought-books/book-list/book-list.component';
 import { SummaryComponent } from './my-bought-books/summary/summary.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-page/login-form/login-form.component';
 import { RegisterFormComponent } from './login-page/register-form/register-form.component';
 import { ModalComponent } from './modal/modal.component';
 import { AuthorizationService } from './authorization.service';
+import { CategoryAddComponent } from './category-add/category-add.component';
+import { BookAddComponent } from './book-add/book-add.component';
+import { JwtInterceptorService } from './jwt-interceptor.service';
+import { LastReservationsComponent } from './last-reservations/last-reservations.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,9 @@ import { AuthorizationService } from './authorization.service';
     LoginFormComponent,
     RegisterFormComponent,
     ModalComponent,
+    CategoryAddComponent,
+    BookAddComponent,
+    LastReservationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,12 +63,14 @@ import { AuthorizationService } from './authorization.service';
       { path: 'availablebooks', component: AvailableBooksComponent },
       { path: 'boughtbooks', component: MyBoughtBooksComponent },
       { path: 'bookdetails/:id', component: BookDetailComponent},
+      { path: 'createBook', component: BookAddComponent},
+      { path: 'createCategory', component: CategoryAddComponent},
       { path: 'login', component: LoginPageComponent },
-      { path: 'home' , redirectTo: 'availablebooks'}
+      { path: 'home' , redirectTo: '/availablebooks'},
     ]),
     HttpClientModule
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {

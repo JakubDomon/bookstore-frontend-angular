@@ -15,6 +15,10 @@ export class AuthorizationService {
     return this.logged;
   }
 
+  get currentUser(){
+    return JSON.parse(localStorage.getItem('currentUser') ?? '{}');
+  }
+
   login(login: number, password: string){
     this.httpClient.post(`${environment.apiUrl}authentication/authenticate`, { login: login, password: password })
       .subscribe({

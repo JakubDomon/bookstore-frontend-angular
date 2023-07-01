@@ -1,0 +1,6 @@
+<div  class="w-100 position-absolute top-0 start-0 border-bottom d-flex justify-content-center align-items-center flex-column">
+  <h5 class="p-3">MY LAST RESERVATIONS</h5>
+  <ul class="list-group w-100">
+    <li *ngFor="let reservation of reservations" class="list-group-item">{{ reservation.addDate | date }},</li>
+  </ul>
+</div>

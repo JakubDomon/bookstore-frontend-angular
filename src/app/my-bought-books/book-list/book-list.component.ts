@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Book } from 'src/app/models/Book';
 
 @Component({
   selector: 'app-book-list',
@@ -6,5 +7,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent {
-  @Input() books: any;
+  @Input() books: Book[];
+
+  constructor(){ }
+
+  removeReservedBook(book: Book){
+    const index = this.books.indexOf(book)
+    var bookAfterRemove = this.books.splice(index, 1);
+
+    localStorage.setItem('reservedBooks', JSON.stringify(this.books));
+  }
 }

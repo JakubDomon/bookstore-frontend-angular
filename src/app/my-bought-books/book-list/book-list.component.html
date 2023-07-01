@@ -1,5 +1,5 @@
 <div class="w-100 h-100">
-  <div *ngIf="books.length || books === null; else noBooks" class="w-100 h-100 d-flex justify-content-start align-items-center flex-column">
+  <div *ngIf="books.length; else noBooks" class="w-100 h-100 d-flex justify-content-start align-items-center flex-column">
     <h5>Reserved books</h5>
     <div class="container">
       <div class="table-responsive">
@@ -10,14 +10,18 @@
               <th scope="col">Title</th>
               <th scope="col">Author</th>
               <th scope="col">Description</th>
+              <th scope="col">Price</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let book in books; let i = index">
+            <tr *ngFor="let book of books; let i = index">
               <td>{{ i+1 }}</td>
               <td>{{ book.title }}</td>
               <td>{{ book.author }}</td>
               <td>{{ book.description }}</td>
+              <td>{{ book.price }} $</td>
+              <td><button class="btn" (click)="removeReservedBook(book)"><i class="fa-solid fa-trash"></i></button></td>
             </tr>
           </tbody>
         </table>

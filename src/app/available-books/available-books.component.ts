@@ -3,6 +3,9 @@ import { AvailableBooksService } from '../available-books.service';
 import { BookCategoriesService } from '../book-categories.service';
 import { fadeIn } from '../animations/fadeIn';
 import { fadeOut } from '../animations/fadeOut';
+import { Book } from '../models/Book';
+import { Category } from '../models/Category';
+import { AuthorizationService } from '../authorization.service';
 
 @Component({
   selector: 'app-available-books',
@@ -11,13 +14,17 @@ import { fadeOut } from '../animations/fadeOut';
   animations: [fadeIn, fadeOut],
 })
 export class AvailableBooksComponent implements OnInit{
-  availableBooks: any[] = [];
-  bookCategories: any[] = [];
+  availableBooks: Book[] = [];
+  bookCategories: Category[] = [];
 
   // Filters
-  categoryFilter: string = '';
+  categoryFilter: number = 0;
 
-  constructor(private availableBooksService: AvailableBooksService, private bookCategoriesService: BookCategoriesService){}
+  constructor(private availableBooksService: AvailableBooksService, private bookCategoriesService: BookCategoriesService, private authServ: AuthorizationService){}
+
+  get isLoggedIn(){
+    return this.authServ.isLoggedIn
+  }
 
   ngOnInit(): void {
     // Available books
@@ -34,7 +41,25 @@ export class AvailableBooksComponent implements OnInit{
       })
   }
 
-  assignCategory(category: string){
+  assignCategory(category: number){
     this.categoryFilter = category;
+  }
+
+  reserveBook(book: Book){
+    var reservedBooks = localStorage.getItem('reservedBooks')
+    console.log(reservedBooks)
+    if(reservedBooks === null){
+      var resBooks: Book[] = [];
+      resBooks.push(book);
+      localStorage.setItem('reservedBooks', JSON.stringify(reservedBooks))
+    }
+
+    var retString: string = localStorage.getItem('reservedBooks')!;
+    var resBooks: Book[] = JSON.parse(retString);
+    resBooks.push(book)
+
+    localStorage.setItem('reservedBooks', JSON.stringify(resBooks));
+
+    console.log(resBooks)
   }
 }

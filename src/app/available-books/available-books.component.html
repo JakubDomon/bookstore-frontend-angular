@@ -13,6 +13,10 @@
           <a href="#" [routerLink]="['/bookdetails/' + book.id]">
             <app-book-list-item [book]="book" @fadeIn></app-book-list-item>
           </a>
+          <div class="w-100 d-flex justify-content-between align-items-center">
+            <p class="muted m-2 ms-2">{{ book.price }} $</p>
+            <button *ngIf="isLoggedIn" class="btn" (click)="reserveBook(book)"><i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
         </div>
       </div>
     </div>

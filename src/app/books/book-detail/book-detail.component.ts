@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookDetailsService } from 'src/app/book-details.service';
+import { Book } from 'src/app/models/Book';
 
 @Component({
   selector: 'app-book-detail',
@@ -7,7 +8,7 @@ import { BookDetailsService } from 'src/app/book-details.service';
   styleUrls: ['./book-detail.component.css']
 })
 export class BookDetailComponent implements OnInit{
-  book: any
+  book: Book
 
   constructor(private BookDetailsService: BookDetailsService){};
 
@@ -18,7 +19,6 @@ export class BookDetailComponent implements OnInit{
     .subscribe({
       next: book => {
         this.book = book
-        console.log(book)
       }
     })
   }
