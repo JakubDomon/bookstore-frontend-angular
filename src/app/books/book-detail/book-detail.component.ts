@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BookDetailsService } from 'src/app/book-details.service';
 import { Book } from 'src/app/models/Book';
 
@@ -10,16 +11,20 @@ import { Book } from 'src/app/models/Book';
 export class BookDetailComponent implements OnInit{
   book: Book
 
-  constructor(private BookDetailsService: BookDetailsService){};
+  constructor(private BookDetailsService: BookDetailsService, private route: ActivatedRoute){};
 
   ngOnInit(): void {
-    // Book details
-    this.BookDetailsService
-    .getBookDetails(1)
-    .subscribe({
-      next: book => {
-        this.book = book
-      }
+    this.route.params.subscribe(p => {
+      var id = +p['id']
+
+      // Book details
+      this.BookDetailsService
+      .getBookDetails(id)
+      .subscribe({
+        next: book => {
+          this.book = book
+        }
+      })
     })
   }
 
